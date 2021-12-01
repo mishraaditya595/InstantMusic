@@ -1,4 +1,4 @@
-package xyz.theadityamishra.musictunes.ui.Adapter;
+package xyz.theadityamishra.musictunes.ui.AdapterOld;
 
 import android.content.Context;
 import android.view.LayoutInflater;

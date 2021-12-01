@@ -7,7 +7,7 @@
     android:layout_height="wrap_content"
     android:background="@android:color/transparent"
     android:minHeight="?attr/actionBarSize"
-    app:elevation="@dimen/ly_zero"
+    app:elevation="10dp"
     app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
     app:titleTextColor="@android:color/white">
 
@@ -17,8 +17,8 @@
 
         <ImageView
             android:id="@+id/button_down"
-            android:layout_width="@dimen/ly_32"
-            android:layout_height="@dimen/ly_32"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
             android:scaleType="fitXY"
             android:src="@drawable/ic_baseline_keyboard_arrow_down_24" />
 

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black">
+    android:background="@drawable/library_background">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
@@ -17,49 +17,72 @@
             app:contentScrim="@color/black"
             app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
 
-            <ImageView
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_180"
-                android:src="@drawable/search_img"
-                android:scaleType="centerCrop"/>
+                android:layout_height="match_parent">
 
-            <FrameLayout
-                android:id="@+id/main.framelayout.title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:background="@color/black">
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_alignParentTop="true"
+                    android:scaleType="fitStart"
+                    android:paddingLeft="10dp"
+                    android:src="@drawable/search" />
 
-                <LinearLayout
-                    android:id="@+id/main.linearlayout.title"
+                <FrameLayout
+                    android:id="@+id/main.framelayout.title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|center_horizontal"
-                    android:orientation="vertical"
-                    android:paddingBottom="@dimen/ly_12">
+                    android:layout_gravity="bottom"
+                    android:layout_below="@+id/image"
+                    android:background="@color/black">
 
-                    <EditText
+                    <RelativeLayout
+                        android:id="@+id/main.linearlayout.title"
                         android:layout_width="match_parent"
-                        android:layout_height="45dp"
-                        android:layout_margin="@dimen/dp_8"
-                        android:background="@drawable/editbox_background"
-                        android:gravity="center"
-                        android:hint="@string/search_hint"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/black" />
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|center_horizontal"
+                        android:orientation="vertical"
+                        android:paddingBottom="12dp">
 
-                </LinearLayout>
-            </FrameLayout>
+                        <EditText
+                            android:id="@+id/search_bar_et"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:layout_margin="8dp"
+                            android:background="@drawable/editbox_background"
+                            android:gravity="center"
+                            android:hint="@string/search_hint"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/black" />
+
+                        <Button
+                            android:id="@+id/search_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/search_bar_et"
+                            android:layout_centerHorizontal="true"
+                            android:text="Search"
+                            android:textColor="@color/black"
+                            android:background="@color/gray_white"
+                            />
+
+                    </RelativeLayout>
+                </FrameLayout>
+
+            </RelativeLayout>
+
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/searchRecycler"
+        android:id="@+id/searchRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="@dimen/ly_12"
+        android:layout_margin="12dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
 

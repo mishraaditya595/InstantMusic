@@ -11,5 +11,6 @@
     <color name="color_blue">#120136</color>
     <color name="color_orange">#f64b3c</color>
     <color name="black">#121212</color>
+    <color name="gray_white">#E5E5E5</color>
 
 </resources>

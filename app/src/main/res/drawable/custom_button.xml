@@ -6,6 +6,6 @@
         android:endColor="@color/app_color"
         android:startColor="@color/app_color" />
 
-    <corners android:radius="@dimen/ly_65" />
+    <corners android:radius="65dp" />
 
 </shape>

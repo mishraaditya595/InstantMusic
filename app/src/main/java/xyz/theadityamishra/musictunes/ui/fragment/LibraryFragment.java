@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import xyz.theadityamishra.musictunes.R;
 import xyz.theadityamishra.musictunes.model.old.DataPlayList;
-import xyz.theadityamishra.musictunes.ui.Adapter.LibraryRecyclerAdapter;
+import xyz.theadityamishra.musictunes.ui.AdapterOld.LibraryRecyclerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

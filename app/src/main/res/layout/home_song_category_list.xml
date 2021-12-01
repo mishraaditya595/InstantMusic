@@ -4,17 +4,17 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:layout_margin="@dimen/dp_4">
+    android:layout_margin="4dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="@dimen/dp_8"
-        app:cardElevation="@dimen/dp_8">
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp">
 
         <ImageView
             android:id="@+id/songIMG"
-            android:layout_width="@dimen/dp_140"
+            android:layout_width="140dp"
             android:layout_height="120dp"
             android:scaleType="fitXY"
             android:src="@drawable/song_album" />
@@ -30,7 +30,7 @@
             android:id="@+id/songTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/dp_8"
+            android:layout_margin="8dp"
             android:fontFamily="@font/montserrat_bold"
             android:gravity="start"
             android:text="@string/new_release"

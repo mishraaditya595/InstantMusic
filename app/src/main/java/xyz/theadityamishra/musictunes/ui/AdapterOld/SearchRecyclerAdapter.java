@@ -1,4 +1,4 @@
-package xyz.theadityamishra.musictunes.ui.Adapter;
+package xyz.theadityamishra.musictunes.ui.AdapterOld;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -48,8 +48,7 @@ public class SearchRecyclerAdapter extends RecyclerView.Adapter<SearchRecyclerAd
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            itemName = itemView.findViewById(R.id.searchItemText);
-            itemImg = itemView.findViewById(R.id.searchItemImg);
+
         }
     }
 }

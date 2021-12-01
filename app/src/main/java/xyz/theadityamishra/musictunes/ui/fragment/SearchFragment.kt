@@ -1,46 +1,63 @@
 package xyz.theadityamishra.musictunes.ui.fragment
 
-import xyz.theadityamishra.musictunes.model.old.SearchData
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.RecyclerView
-import xyz.theadityamishra.musictunes.ui.Adapter.SearchRecyclerAdapter
-import androidx.recyclerview.widget.GridLayoutManager
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import xyz.theadityamishra.musictunes.R
-import java.util.ArrayList
+import xyz.theadityamishra.musictunes.databinding.SearchFragmentBinding
+import xyz.theadityamishra.musictunes.model.remote.RemoteRepo
+import xyz.theadityamishra.musictunes.ui.adapters.SearchAdapter
+import xyz.theadityamishra.musictunes.viewModel.ViewModel
+import xyz.theadityamishra.musictunes.viewModel.ViewModelFactory
 
 class SearchFragment : Fragment() {
 
-    var searchDataList: MutableList<SearchData>? = null
+    private lateinit var binding: SearchFragmentBinding
+    private lateinit var viewModel: ViewModel
+    private lateinit var searchAdapter: SearchAdapter
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-
-//        searchDataList?.add(SearchData("Pop", R.drawable.pop))
-//        searchDataList?.add(SearchData("Hip Hop", R.drawable.eminem))
-//        searchDataList?.add(SearchData("Rock music", R.drawable.pitbull))
-//        searchDataList?.add(SearchData("Romantic", R.drawable.selena_tw))
-//        searchDataList?.add(SearchData("Podcasts", R.drawable.gladiator))
-//        searchDataList?.add(SearchData("Motivation", R.drawable.motivation))
-//        searchDataList?.add(SearchData("New Release", R.drawable.ariana))
-//        searchDataList?.add(SearchData("Acoustic", R.drawable.enrique_r))
-//        searchDataList?.add(SearchData("Discover", R.drawable.last_archive))
-//        searchDataList?.add(SearchData("Concerts", R.drawable.dance))
-//        searchDataList?.add(SearchData("Bollywood", R.drawable.kk))
-//        searchDataList?.add(SearchData("Soothing", R.drawable.arijit))
-
         val v = inflater.inflate(R.layout.search_fragment, container, false)
-//        val recyclerView: RecyclerView = v.findViewById(R.id.searchRecycler)
-//        val searchRecyclerAdapter = SearchRecyclerAdapter(activity, searchDataList)
-//        recyclerView.layoutManager = GridLayoutManager(activity, 2)
-//        recyclerView.adapter = searchRecyclerAdapter
         return v
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding = SearchFragmentBinding.bind(view)
 
+        val remoteRepo = RemoteRepo()
+        val viewModelFactory = ViewModelFactory(requireContext(), remoteRepo)
+        viewModel = ViewModelProvider(this, viewModelFactory)[ViewModel::class.java]
+
+        binding.searchBtn.setOnClickListener {
+            val term = binding.searchBarEt.text.toString()
+
+            viewModel.getMusicData(term)
+
+            viewModel.musicApiResponse.observe(viewLifecycleOwner, Observer {
+                val searchResponseList = it.results
+                searchAdapter.submitList(it.results)
+            })
+        }
+
+        setupRecyclerView()
+    }
+
+    private fun setupRecyclerView() {
+        binding.searchRecyclerView.apply {
+            searchAdapter = SearchAdapter()
+            adapter = searchAdapter
+            layoutManager = LinearLayoutManager(requireContext()).apply {
+                orientation = LinearLayoutManager.VERTICAL
+            }
+        }
     }
 }
