@@ -1,4 +1,4 @@
-package com.example.musicstructureapp.Adapter;
+package xyz.theadityamishra.musictunes.ui.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,8 +10,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.musicstructureapp.Model.DataPlayList;
-import com.example.musicstructureapp.R;
+import xyz.theadityamishra.musictunes.R;
+import xyz.theadityamishra.musictunes.model.old.DataPlayList;
+
 
 import java.util.List;
 

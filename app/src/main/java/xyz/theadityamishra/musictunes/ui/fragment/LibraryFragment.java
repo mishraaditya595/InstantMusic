@@ -1,4 +1,4 @@
-package com.example.musicstructureapp.Fragment;
+package xyz.theadityamishra.musictunes.ui.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,9 +11,9 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.musicstructureapp.Model.DataPlayList;
-import com.example.musicstructureapp.Adapter.LibraryRecyclerAdapter;
-import com.example.musicstructureapp.R;
+import xyz.theadityamishra.musictunes.R;
+import xyz.theadityamishra.musictunes.model.old.DataPlayList;
+import xyz.theadityamishra.musictunes.ui.Adapter.LibraryRecyclerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

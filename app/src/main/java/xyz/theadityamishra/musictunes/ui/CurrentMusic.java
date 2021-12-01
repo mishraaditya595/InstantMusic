@@ -1,4 +1,4 @@
-package com.example.musicstructureapp;
+package xyz.theadityamishra.musictunes.ui;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +12,11 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+
+
+import xyz.theadityamishra.musictunes.MainActivity;
+import xyz.theadityamishra.musictunes.R;
 
 public class CurrentMusic extends AppCompatActivity {
     ImageView buttonDown;

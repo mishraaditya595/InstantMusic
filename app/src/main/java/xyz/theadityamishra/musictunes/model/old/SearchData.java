@@ -1,4 +1,4 @@
-package com.example.musicstructureapp.Model;
+package xyz.theadityamishra.musictunes.model.old;
 
 public class SearchData {
     private String itemName;

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.musicstructureapp">
+    package="xyz.theadityamishra.musictunes">
 
     <application
         android:allowBackup="true"
@@ -10,10 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".CurrentMusic" />
+            android:name="xyz.theadityamishra.musictunes.ui.CurrentMusic" />
         <activity
-            android:name=".SplashScreen"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
+            android:name="xyz.theadityamishra.musictunes.ui.SplashScreen"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,7 +22,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name="xyz.theadityamishra.musictunes.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/ThemeFullScreen" />
     </application>

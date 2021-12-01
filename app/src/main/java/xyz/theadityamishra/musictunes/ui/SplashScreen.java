@@ -1,4 +1,4 @@
-package com.example.musicstructureapp;
+package xyz.theadityamishra.musictunes.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,7 +9,10 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
+
+
+import xyz.theadityamishra.musictunes.MainActivity;
+import xyz.theadityamishra.musictunes.R;
 
 public class SplashScreen extends AppCompatActivity {
 

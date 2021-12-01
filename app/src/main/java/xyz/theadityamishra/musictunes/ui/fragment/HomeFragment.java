@@ -1,6 +1,5 @@
-package com.example.musicstructureapp.Fragment;
+package xyz.theadityamishra.musictunes.ui.fragment;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,15 +8,10 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.musicstructureapp.Model.DataHome;
-import com.example.musicstructureapp.Adapter.HomeRecyclerAdapter;
-import com.example.musicstructureapp.Model.DataSongCategory;
-import com.example.musicstructureapp.R;
-
+import xyz.theadityamishra.musictunes.R;
+import xyz.theadityamishra.musictunes.model.old.DataHome;
+import xyz.theadityamishra.musictunes.model.old.DataSongCategory;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -103,14 +97,14 @@ public class HomeFragment extends Fragment {
         dataHomes.add(new DataHome("Too mush Bollywood", categoriesItem6));
         dataHomes.add(new DataHome("Made for you", categoriesItem7));
 
-        setMainCategoryAdapter(dataHomes);
+//        setMainCategoryAdapter(dataHomes);
     }
 
-    private void setMainCategoryAdapter(List<DataHome> dataHomes) {
-        HomeRecyclerAdapter homeRecyclerAdapter = new HomeRecyclerAdapter(getActivity(), dataHomes);
-        RecyclerView recyclerView = getView().findViewById(R.id.home_recycler);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        recyclerView.setAdapter(homeRecyclerAdapter);
-    }
+//    private void setMainCategoryAdapter(List<DataHome> dataHomes) {
+//        CategorySongItemAdapter homeRecyclerAdapter = new CategorySongItemAdapter(getActivity(), dataHomes);
+//        RecyclerView recyclerView = getView().findViewById(R.id.home_recycler);
+//        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+//        recyclerView.setAdapter(homeRecyclerAdapter);
+//    }
 
 }

@@ -1,7 +1,6 @@
-package com.example.musicstructureapp.Adapter;
+package xyz.theadityamishra.musictunes.ui.Adapter;
 
 import android.content.Context;
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,8 +10,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.musicstructureapp.Model.DataSongCategory;
-import com.example.musicstructureapp.R;
+import xyz.theadityamishra.musictunes.R;
+import xyz.theadityamishra.musictunes.model.old.DataSongCategory;
+
 
 import java.util.List;
 
